@@ -1,0 +1,33 @@
+<!-- base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Smart Task Management System{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'dashboard' %}" class="navbar-brand">STMS</a> <!-- This will be updated later -->
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Smart Task Management System</h1>
+        <p>Manage your tasks smartly and efficiently!</p>
+        <a href="{% url 'get_started' %}" class="btn btn-primary">Get Started</a>
+    </div>
+
+    <div class="auth-buttons">
+        <a href="{% url 'login' %}" class="btn btn-success">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-primary">Register</a>
+        <a href="{% url 'dashboard' %}" class="btn btn-info">Dashboard</a>
+    </div>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
